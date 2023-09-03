@@ -7,14 +7,25 @@ const ingredients = [
   'Condiments',
 ];
 
-const item = [];
+const items = [];
 const list = document.getElementById('ingredients');
+ingredients.forEach((element) => {
+  const item = document.createElement('li');
+  item.textContent = element.toString();
+  item.classList.add('item');
+  items.push(item);
+});
 
-for (let i = 0; i < 6; i += 1) {
-  item[i] = document.createElement('li');
-  item[i].textContent = ingredients[i].toString();
-  item[i].classList.add('item');
-  list.append(item[i]);
-}
+list.append(...items);
 
-console.log(item);
+// Array as a simple type (not an object).
+// No array methods
+//
+// for (let i = 0; i < 6; i += 1) {
+//  items[i] = document.createElement('li');
+//  items[i].textContent = ingredients[i].toString();
+//  items[i].classList.add('item');
+//  list.append(items[i]);
+// }
+
+console.log(items);
