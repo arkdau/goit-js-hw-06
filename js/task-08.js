@@ -7,6 +7,12 @@ function handlerSubmit(event) {
   const {
     elements: { email, password },
   } = form;
+  const data = {
+    email: '',
+    password: '',
+  };
+  data.email = email.value;
+  data.password = password.value;
   if (email.value === '' && password.value === '') {
     alert('Email, Password - empty string');
   } else if (email.value === '') {
@@ -14,7 +20,8 @@ function handlerSubmit(event) {
   } else if (password.value === '') {
     alert('Password - empty string');
   } else {
-    console.log(`Email: ${email.value}, Password: ${password.value}`);
+    // console.log(`Email: ${email.value}, Password: ${password.value}`);
+    console.log(data);
     form.reset();
   }
   // console.log(form);
